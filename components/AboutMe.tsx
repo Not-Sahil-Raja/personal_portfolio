@@ -31,7 +31,7 @@ const AboutMe: React.FC = () => {
             }}
           >
             <span className="text-[6vh] pb-[3vh] font-BitxMap">
-              Hi! I'm Sahil
+              Hi! I&apos;m Sahil
             </span>
             A full-stack web developer passionate about creating seamless online
             experiences. With expertise in both front-end and back-end
