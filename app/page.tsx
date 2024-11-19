@@ -1,101 +1,225 @@
+"use client";
 import Image from "next/image";
+import Link from "next/link";
+
+import React, { useEffect, useRef, useState } from "react";
+import { motion, useInView, useScroll, useTransform } from "framer-motion";
+
+import Homepage from "@/components/HomePage";
+import AboutMe from "@/components/AboutMe";
+import Header from "@/components/Header";
+import TechStacks from "@/components/TechStacks";
+import Connect from "@/components/Connect";
+import ThankYou from "@/components/ThankYou";
+import StackProject from "@/components/StackProject";
+import Reveal from "@/components/Reveal";
+// import noise from "/noise.svg";
+
+interface ProjectDataItem {
+  projectName: string;
+  video: string;
+  link: string;
+  details: string;
+  color: string;
+}
 
 export default function Home() {
-  return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+  const [isLoading, setIsLoading] = useState(true);
+  const [mobileView, setMobileView] = useState(false);
+  const [techTranslateX, setTechTranslateX] = useState("-80%");
+  const container = useRef<HTMLDivElement>(null);
+  const homeRef = useRef<HTMLDivElement>(null);
+  const aboutRef = useRef<HTMLDivElement>(null);
+  const projectRef = useRef<HTMLDivElement>(null);
+  const techRef = useRef<HTMLDivElement>(null);
+  const connectRef = useRef<HTMLDivElement>(null);
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+  const { scrollYProgress } = useScroll({
+    target: container,
+    offset: ["start start", "end end"],
+  });
+
+  useEffect(() => {
+    if (window.innerWidth < 768) {
+      setMobileView(true);
+      setTechTranslateX("-140%");
+    }
+  }, []);
+
+  // For Homepage Component  Animation with Scroll
+  const HomepageScale = useTransform(scrollYProgress, [0.01, 0.12], [1, 0.5]);
+  const HomepageRotation = useTransform(
+    scrollYProgress,
+    [0.01, 0.12],
+    ["0", "10deg"]
+  );
+  const HomepageOpacity = useTransform(
+    scrollYProgress,
+    [0.01, 0.09],
+    [1, 0.25]
+  );
+
+  const TechstackVertical = useTransform(
+    scrollYProgress,
+    [0.63, 1],
+    ["5%", techTranslateX]
+  ); // For TechStacks Component Vertical Animation with Scroll
+
+  const scaleProgressThankYouComp = useTransform(
+    scrollYProgress,
+    [0.8, 1],
+    [0, 1]
+  ); // For ThankYou Component Scale Animation with Scroll
+
+  const rotationProgressThankYouComp = useTransform(
+    scrollYProgress,
+    [0.8, 1],
+    ["15deg", "0deg"]
+  ); // For ThankYou Component Rotation Animation with Scroll
+
+  const ProjectData: ProjectDataItem[] = [
+    {
+      projectName: "Cypher",
+      video: "./CypherPromo.mp4",
+      link: "https://cypher-theta.vercel.app/",
+      details:
+        "Our payment fraud application employs machine learning algorithms to detect suspicious transactions, flagging potential fraudulent activity in real-time.",
+      color: "#3b2535",
+    },
+    {
+      projectName: "Agrico",
+      video: "./AgricoPromo.mp4",
+      details:
+        "Agrico is an innovative EdTech platform empowering individuals and communities to learn modern farming practices and cultivate sustainable agricultural success.",
+      color: "#474725",
+      link: "https://agrico.vercel.app/",
+    },
+    {
+      projectName: "Cook's Book",
+      video: "./Cook'sBookPromo.mp4",
+      details:
+        "Cook's Book could evolve into a meal planning tool, suggesting recipes for the entire week that utilize overlapping ingredients and minimize waste.",
+      color: "#3f3c3a",
+      link: "https://github.com/AvirupRay/CookBook",
+    },
+    {
+      projectName: "RobinFood",
+      video: "./RobinFoodPromo.mp4",
+      details:
+        "RobinFood is a web platform that bridges the gap between restaurants with surplus food and non-governmental organizations (NGOs), food banks, dedicated to distributing food to those in need.",
+      color: "#7d9470",
+      link: "https://github.com/AvirupRay/reckon_5.0",
+    },
+  ];
+
+  useEffect(() => {
+    setTimeout(() => {
+      setIsLoading(false);
+    }, 1600);
+  }, []);
+
+  return (
+    <motion.div className={`relative select-none ${isLoading ? "" : ""}`}>
+      <Reveal />
+
+      {/* Logo at the top left corner */}
+
+      <div ref={container} className=" ">
+        {/* Header Component with Navigation Links */}
+        <Header />
+        <motion.section className="block">
+          {/* Rending the Homepage Component */}
+          <section
+            className=" block w-[calc(100vw-3px)] min-h-[200vh] mb-[-100vh]"
+            id="home"
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
+            <Homepage
+              scaleV={HomepageScale}
+              rotationV={HomepageRotation}
+              opacityV={HomepageOpacity}
+              color={"1f2a47"}
             />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+          </section>
+
+          {/* Rendering the Projects Component List */}
+          <section
+            ref={projectRef}
+            className="h-[400vh] sticky top-0 z-30"
+            id="Projects" // For Navigation
           >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
+            {ProjectData.map((data, index) => (
+              <StackProject index={index} key={index} data={data} />
+            ))}
+          </section>
+        </motion.section>
+
+        {/* Rendering the AboutMe Component */}
+
+        <AboutMe />
+
+        {/* Rendering the TechStacks Component */}
+
+        <motion.section className="relative h-[300vh] text-5xl" ref={techRef}>
+          <section
+            className="h-screen w-[calc(100vw-3px)] flex flex-col  sticky top-[0px] z-30"
+            style={{ position: "sticky" }}
+            id="TechStacks" // For Navigation
+          >
+            <div className="h-[15%]  overflow-hidden"></div>
+            <TechStacks TechstackVertical={TechstackVertical} />
+          </section>
+        </motion.section>
+
+        {/* Rendering the Connect Component */}
+
+        <section
+          className="h-[200vh] w-[calc(100vw-3px)]  flex flex-col relative"
+          ref={connectRef}
+          id="Contacts" // For Navigation
         >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
+          {/* <div className="w-full h-[100vh] fixed top-0 overflow-hidden">
+            <motion.div
+              className="absolute w-[70vw] left-[80%] top-[12vh] aspect-square border-4 rounded-full "
+              style={{
+                maskImage: "linear-gradient(transparent 30%, [#303083] 100%)",
+              }}
+              animate={{
+                rotate: [0, 360],
+                x: ["0%", "10%"],
+                transition: {
+                  duration: 10,
+                  repeat: Infinity,
+                  repeatType: "reverse",
+                  ease: "linear",
+                },
+              }}
+            />
+            <motion.div
+              className="absolute w-[70vw] left-[85%] opacity-[30%] top-[10vh] aspect-square border-2 rounded-full "
+              style={{
+                maskImage: "linear-gradient(transparent 30%, [#303083] 100%)",
+              }}
+              animate={{
+                rotate: [360, 0],
+                x: ["0%", "15%"],
+                transition: {
+                  duration: 10,
+                  repeat: Infinity,
+                  repeatType: "reverse",
+                  ease: "linear",
+                },
+              }}
+            />
+          </div> */}
+          <Connect />
+          <ThankYou
+            scaleProgress={scaleProgressThankYouComp}
+            rotationProgress={rotationProgressThankYouComp}
           />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+        </section>
+
+        {/* Rendering the ThankYou Component */}
+      </div>
+    </motion.div>
   );
 }

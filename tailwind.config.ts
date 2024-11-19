@@ -8,6 +8,12 @@ export default {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        BitxMap: "var(--font-bitxmap)",
+        Coolvetica: "var(--font-coolvetica)",
+        MonumentExtended: "var(--font-monument-extended)",
+        ppneuemonteral: "var(--font-ppneuemonteral)",
+      },
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
