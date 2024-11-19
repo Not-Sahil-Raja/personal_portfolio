@@ -1,10 +1,7 @@
 "use client";
-import Image from "next/image";
-import Link from "next/link";
 
 import React, { useEffect, useRef, useState } from "react";
-import { motion, useInView, useScroll, useTransform } from "framer-motion";
-
+import { motion, useScroll, useTransform } from "framer-motion";
 import Homepage from "@/components/HomePage";
 import AboutMe from "@/components/AboutMe";
 import Header from "@/components/Header";
@@ -25,11 +22,8 @@ interface ProjectDataItem {
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
-  const [mobileView, setMobileView] = useState(false);
   const [techTranslateX, setTechTranslateX] = useState("-80%");
   const container = useRef<HTMLDivElement>(null);
-  const homeRef = useRef<HTMLDivElement>(null);
-  const aboutRef = useRef<HTMLDivElement>(null);
   const projectRef = useRef<HTMLDivElement>(null);
   const techRef = useRef<HTMLDivElement>(null);
   const connectRef = useRef<HTMLDivElement>(null);
@@ -40,10 +34,7 @@ export default function Home() {
   });
 
   useEffect(() => {
-    if (window.innerWidth < 768) {
-      setMobileView(true);
-      setTechTranslateX("-140%");
-    }
+    if (window.innerWidth < 768) setTechTranslateX("-140%");
   }, []);
 
   // For Homepage Component  Animation with Scroll
@@ -177,40 +168,6 @@ export default function Home() {
           ref={connectRef}
           id="Contacts" // For Navigation
         >
-          {/* <div className="w-full h-[100vh] fixed top-0 overflow-hidden">
-            <motion.div
-              className="absolute w-[70vw] left-[80%] top-[12vh] aspect-square border-4 rounded-full "
-              style={{
-                maskImage: "linear-gradient(transparent 30%, [#303083] 100%)",
-              }}
-              animate={{
-                rotate: [0, 360],
-                x: ["0%", "10%"],
-                transition: {
-                  duration: 10,
-                  repeat: Infinity,
-                  repeatType: "reverse",
-                  ease: "linear",
-                },
-              }}
-            />
-            <motion.div
-              className="absolute w-[70vw] left-[85%] opacity-[30%] top-[10vh] aspect-square border-2 rounded-full "
-              style={{
-                maskImage: "linear-gradient(transparent 30%, [#303083] 100%)",
-              }}
-              animate={{
-                rotate: [360, 0],
-                x: ["0%", "15%"],
-                transition: {
-                  duration: 10,
-                  repeat: Infinity,
-                  repeatType: "reverse",
-                  ease: "linear",
-                },
-              }}
-            />
-          </div> */}
           <Connect />
           <ThankYou
             scaleProgress={scaleProgressThankYouComp}

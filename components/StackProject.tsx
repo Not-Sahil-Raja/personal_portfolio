@@ -1,7 +1,7 @@
 import React, { useRef, useState } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { ArrowUpRight, Pause, Play } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 
 interface ProjectData {
   projectName: string;
@@ -17,8 +17,6 @@ interface StackProjectProps {
 }
 
 const StackProject: React.FC<StackProjectProps> = ({ index, data }) => {
-  const [vidPlaying, setVidPlaying] = useState(false);
-  const [videoHover, setVideoHover] = useState(false);
   const videoRef = useRef<HTMLVideoElement | null>(null);
 
   return (
@@ -40,8 +38,6 @@ const StackProject: React.FC<StackProjectProps> = ({ index, data }) => {
           className="rounded aspect-video lg:h-[90%] object-cover object-center"
           loop
           ref={videoRef}
-          onMouseEnter={() => setVideoHover(true)}
-          onMouseLeave={() => setVideoHover(false)}
           muted={true}
         />
         <div className="h-[9%] mt-[.5vh] lg:w-full flex text-center px-[.5vw] py-[2vh] items-center text-[#303083] font-Geist">

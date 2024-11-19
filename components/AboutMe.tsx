@@ -1,24 +1,10 @@
-import { ArrowUpRight } from "lucide-react";
-import React, { forwardRef, useRef, useState } from "react";
-import { delay, motion, useInView } from "framer-motion";
+import React, { useRef, useState } from "react";
+import { motion, useInView } from "framer-motion";
 
 import Link from "next/link";
 import Image from "next/image";
-import { tr } from "framer-motion/client";
 
-// Define the ref type for the forwardRef
-interface AboutMeProps {}
-type AboutMeRef = React.Ref<HTMLDivElement>;
-
-const AboutMe: React.FC<AboutMeProps> = (_, ref) => {
-  const [hover1, setHover1] = useState(false);
-  const [hover2, setHover2] = useState(false);
-  const [hover3, setHover3] = useState(false);
-  const [resHover, setResHover] = useState(false);
-
-  const bottomRef = useRef<HTMLDivElement>(null);
-  const bottomInV = useInView(bottomRef);
-
+const AboutMe: React.FC = () => {
   const abtTextRef = useRef<HTMLDivElement>(null);
   const abtTextInV = useInView(abtTextRef);
 

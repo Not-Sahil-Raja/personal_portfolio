@@ -10,7 +10,7 @@ interface TechStackCategory {
 
 // Define the props for the TechStacks component
 interface TechStacksProps {
-  TechstackVertical: any;
+  TechstackVertical: MotionValue<string>;
 }
 
 // Define the static data with type annotations

@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { exit } from "process";
-import { tr } from "framer-motion/client";
 
 const Reveal = () => {
   const [isLoading, setisLoading] = useState(true);

@@ -2,7 +2,6 @@ import { ArrowUp } from "lucide-react";
 import React, { useRef, useState, MouseEvent } from "react";
 import { motion, MotionValue } from "framer-motion";
 import Link from "next/link";
-import { line, linearGradient } from "framer-motion/client";
 
 interface ThankYouProps {
   scaleProgress: MotionValue<number>;

@@ -168,7 +168,7 @@ const Header: React.FC = ({}) => {
               animate="open"
               exit="closed"
             >
-              {sections.map(({ label, index, id }) => (
+              {sections.map(({ label, id }) => (
                 <div
                   key={id}
                   className="text-[4.5vh] overflow-hidden text-center"
