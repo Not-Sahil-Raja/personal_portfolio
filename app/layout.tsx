@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import SmoothScroll from "@/utils/SmoothScrolling";
+import { Suspense } from "react";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -85,7 +86,9 @@ export default function RootLayout({
           ${ppneuemonteral.variable}
           antialiased`}
       >
-        <SmoothScroll>{children}</SmoothScroll>
+        <Suspense fallback={<div>Loading...</div>}>
+          <SmoothScroll>{children}</SmoothScroll>
+        </Suspense>
       </body>
     </html>
   );
