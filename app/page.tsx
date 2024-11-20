@@ -14,10 +14,10 @@ import Reveal from "@/components/Reveal";
 
 interface ProjectDataItem {
   projectName: string;
-  video: string;
+  image: string;
   link: string;
   details: string;
-  color: string;
+  pageLink: string;
 }
 
 export default function Home() {
@@ -71,53 +71,60 @@ export default function Home() {
   const ProjectData: ProjectDataItem[] = [
     {
       projectName: "Cypher",
-      video: "./CypherPromo.mp4",
+      image: "./test.jpg",
       link: "https://cypher-theta.vercel.app/",
       details:
         "Our payment fraud application employs machine learning algorithms to detect suspicious transactions, flagging potential fraudulent activity in real-time.",
-      color: "#3b2535",
+      pageLink: "/projects/cypher",
     },
     {
       projectName: "Agrico",
-      video: "./AgricoPromo.mp4",
+      image: "./test.jpg",
       details:
         "Agrico is an innovative EdTech platform empowering individuals and communities to learn modern farming practices and cultivate sustainable agricultural success.",
-      color: "#474725",
+
       link: "https://agrico.vercel.app/",
+      pageLink: "/projects/agrico",
     },
     {
       projectName: "Cook's Book",
-      video: "./Cook'sBookPromo.mp4",
+      image: "./test.jpg",
       details:
         "Cook's Book could evolve into a meal planning tool, suggesting recipes for the entire week that utilize overlapping ingredients and minimize waste.",
-      color: "#3f3c3a",
+
       link: "https://github.com/AvirupRay/CookBook",
+      pageLink: "/projects/cooks_book",
     },
     {
       projectName: "RobinFood",
-      video: "./RobinFoodPromo.mp4",
+      image: "./test.jpg",
       details:
         "RobinFood is a web platform that bridges the gap between restaurants with surplus food and non-governmental organizations (NGOs), food banks, dedicated to distributing food to those in need.",
-      color: "#7d9470",
+
       link: "https://github.com/AvirupRay/reckon_5.0",
+      pageLink: "/projects/robinfood",
     },
   ];
 
   useEffect(() => {
     setTimeout(() => {
       setIsLoading(false);
-    }, 1600);
+    }, 3000);
   }, []);
 
   return (
-    <motion.div className={`relative select-none ${isLoading ? "" : ""}`}>
+    <motion.div
+      className={`relative select-none ${
+        isLoading ? "h-screen overflow-hidden" : ""
+      }`}
+    >
       <Reveal />
 
       {/* Logo at the top left corner */}
 
       <div ref={container} className=" ">
         {/* Header Component with Navigation Links */}
-        <Header />
+        <Header delayTime={3.0} />
         <motion.section className="block">
           {/* Rending the Homepage Component */}
           <section

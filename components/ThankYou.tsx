@@ -105,7 +105,7 @@ const ThankYou: React.FC<ThankYouProps> = ({
           }}
         >
           <Link
-            href="/"
+            href="mailto:sahilraja2002@gmail.com"
             className="text-[#4242b4] hover:text-[#191946] border bg-white/50 border-[#303083] rounded-sm px-3 py-1 font-BitxMap"
           >
             DROP ME A LINE

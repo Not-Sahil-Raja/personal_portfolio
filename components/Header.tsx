@@ -3,8 +3,12 @@ import { AnimatePresence, motion } from "framer-motion";
 import { MenuIcon, X } from "lucide-react";
 import Link from "next/link";
 
-const Header: React.FC = ({}) => {
-  const DELAY = 3.0;
+interface HeaderProps {
+  delayTime: number;
+}
+
+const Header: React.FC<HeaderProps> = ({ delayTime }) => {
+  const DELAY = delayTime;
   const [pageActive, setPageActive] = useState<number>(1);
   const [mobMenu, setMobMenu] = useState<boolean>(false);
 
