@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 
-const layout: React.FC<React.PropsWithChildren<{}>> = ({ children }) => {
+const layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const buttonVariants = {
     initial: { y: 0 },
     hidden: { y: 100 },

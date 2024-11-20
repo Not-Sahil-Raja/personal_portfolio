@@ -1,9 +1,8 @@
 "use client";
 import React from "react";
 import { useParams } from "next/navigation";
-import Image from "next/image";
 import { motion } from "framer-motion";
-import { ArrowLeftIcon, Github, Globe } from "lucide-react";
+import { Github, Globe } from "lucide-react";
 import Link from "next/link";
 
 interface ProjectDetails {
@@ -14,7 +13,7 @@ interface ProjectDetails {
   images?: string[];
 }
 
-const page = () => {
+const Page = () => {
   const projectDetails: ProjectDetails[] = [
     {
       projectName: "kidney_disease_ai",
@@ -247,4 +246,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;
