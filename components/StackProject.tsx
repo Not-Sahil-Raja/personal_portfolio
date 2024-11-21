@@ -18,7 +18,7 @@ interface StackProjectProps {
 
 const StackProject: React.FC<StackProjectProps> = ({ index, data }) => {
   const ref = useRef<HTMLDivElement>(null);
-  const isInView = useInView(ref, { once: true, amount: 0.45 });
+  const isInView = useInView(ref, { amount: 0.45 });
 
   const ImageScaleVariants = {
     hidden: {
