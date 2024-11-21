@@ -45,7 +45,7 @@ const AboutMe: React.FC = () => {
           <div className="flex flex-col w-full h-full">
             <div className="h-3/5"></div>
             <div className="h-2/5 flex flex-col justify-end items-center">
-              <div className="lg:w-full w-full flex flex-col z-50 mb-[3vh] items-center font-ppneuemonteral mix-blend-difference font-medium tracking-wider justify-center pl-[2vw] overflow-hidden text-white ">
+              <div className="lg:w-full w-full flex flex-col z-20 mb-[3vh] items-center font-ppneuemonteral mix-blend-difference font-medium tracking-wider justify-center pl-[2vw] overflow-hidden text-white ">
                 {[
                   "Crafting ideas into seamless web experiences.",
                   "Bridging code and creativity with passion.",

@@ -142,7 +142,7 @@ export default function Home() {
           {/* Rendering the Projects Component List */}
           <section
             ref={projectRef}
-            className="h-[400vh] sticky top-0 z-30"
+            className="h-[400vh] sticky top-0 z-20"
             id="Projects" // For Navigation
           >
             {ProjectData.map((data, index) => (

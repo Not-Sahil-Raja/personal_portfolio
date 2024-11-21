@@ -135,7 +135,7 @@ const Header: React.FC<HeaderProps> = ({ delayTime }) => {
       <AnimatePresence>
         <div
           onClick={() => setMobMenu(!mobMenu)}
-          className="lg:scale-0 fixed top-0 right-0 z-20 p-4 bg-black text-white rounded-full m-3"
+          className="lg:scale-0 fixed top-0 right-0 z-[41] p-4 bg-black text-white rounded-full m-3"
         >
           {mobMenu ? (
             <motion.div
@@ -165,7 +165,7 @@ const Header: React.FC<HeaderProps> = ({ delayTime }) => {
       <AnimatePresence>
         {mobMenu && (
           <motion.div
-            className="w-full h-screen bg-white text-black/80 backdrop-blur-md flex flex-col justify-center items-center font-Coolvetica tracking-wide fixed top-0 z-[19] origin-top"
+            className="w-full h-screen bg-white text-black/80 backdrop-blur-md flex flex-col justify-center items-center font-Coolvetica tracking-wide fixed top-0 z-40 origin-top"
             initial={{
               scaleY: 0,
             }}
