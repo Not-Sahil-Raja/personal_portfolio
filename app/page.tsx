@@ -70,8 +70,17 @@ export default function Home() {
 
   const ProjectData: ProjectDataItem[] = [
     {
+      projectName: "KidneyDisease AI",
+      image: "./KidneyDiseaseAI/KidneyDiseaseAI_1.jpg",
+      details:
+        "The aim of this project is to classify kidney disease using a binary classifier and a TensorFlow sequential model.",
+
+      link: "https://kidneyhealthai.vercel.app/",
+      pageLink: "/projects/kidney_disease_ai",
+    },
+    {
       projectName: "Cypher",
-      image: "./test.jpg",
+      image: "./Cypher/cypher_1.jpg",
       link: "https://cypher-theta.vercel.app/",
       details:
         "Our payment fraud application employs machine learning algorithms to detect suspicious transactions, flagging potential fraudulent activity in real-time.",
@@ -79,7 +88,7 @@ export default function Home() {
     },
     {
       projectName: "Agrico",
-      image: "./test.jpg",
+      image: "./Agrico/agrico_1.jpg",
       details:
         "Agrico is an innovative EdTech platform empowering individuals and communities to learn modern farming practices and cultivate sustainable agricultural success.",
 
@@ -88,21 +97,12 @@ export default function Home() {
     },
     {
       projectName: "Cook's Book",
-      image: "./test.jpg",
+      image: "./CooksBook/cooksbook_1.jpg",
       details:
         "Cook's Book could evolve into a meal planning tool, suggesting recipes for the entire week that utilize overlapping ingredients and minimize waste.",
 
       link: "https://github.com/AvirupRay/CookBook",
       pageLink: "/projects/cooks_book",
-    },
-    {
-      projectName: "RobinFood",
-      image: "./test.jpg",
-      details:
-        "RobinFood is a web platform that bridges the gap between restaurants with surplus food and non-governmental organizations (NGOs), food banks, dedicated to distributing food to those in need.",
-
-      link: "https://github.com/AvirupRay/reckon_5.0",
-      pageLink: "/projects/robinfood",
     },
   ];
 

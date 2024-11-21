@@ -1,6 +1,7 @@
 import React from "react";
 import { motion, MotionValue } from "framer-motion";
 import { Globe } from "lucide-react";
+import BgAnim from "./BgAnim";
 
 interface HomepageProps {
   scaleV: MotionValue<number>;
@@ -23,7 +24,8 @@ const Homepage: React.FC<HomepageProps> = ({ scaleV, rotationV, opacityV }) => {
           opacity: opacityV,
         }}
       >
-        <div className="md:h-[12vh] sm:h-[8vh] h-[7vh] flex items-center justify-between sm:p-2 sm:py-0 md:py-2">
+        <BgAnim />
+        <div className="md:h-[12vh] sm:h-[8vh] h-[7vh] flex items-center justify-between sm:p-2 sm:py-0 md:py-2 z-[1]">
           <div className=" w-fit h-full flex md:gap-3 sm:gap-1 gap-0">
             <motion.div
               className=" h-full  aspect-square bg-[#232352] sm:p-2 p-1"
@@ -83,7 +85,7 @@ const Homepage: React.FC<HomepageProps> = ({ scaleV, rotationV, opacityV }) => {
           </div>
         </div>
         <motion.div
-          className=" h-full overflow-hidden bg-[#eceadb] px-4 py-3"
+          className=" h-full overflow-hidden px-4 py-3"
           initial={{ scaleX: 0 }}
           animate={{ scaleX: 1 }}
           transition={{
@@ -92,7 +94,7 @@ const Homepage: React.FC<HomepageProps> = ({ scaleV, rotationV, opacityV }) => {
             ease: [0.85, 0, 0.15, 1],
           }}
         ></motion.div>
-        <div className="  h-fit flex flex-col justify-end pt-[3vh] md:pb-20 pb-5">
+        <div className="  h-fit flex flex-col justify-end pt-[3vh] md:pb-20 pb-5 z-[1]">
           <div className="font-BitxMap text-lg flex justify-end mr-[5vw] text-[#303083]">
             <motion.p
               className="border border-[#303083] px-3"

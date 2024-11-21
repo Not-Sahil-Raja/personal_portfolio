@@ -76,7 +76,7 @@ const StackProject: React.FC<StackProjectProps> = ({ index, data }) => {
           <Link href={data.pageLink}>
             <motion.img
               src={data.image}
-              className="rounded aspect-video  object-cover object-center h-full w-full"
+              className="rounded aspect-video object-contain h-full w-full"
               variants={ImageScaleVariants}
               alt={data.projectName}
               transition={{

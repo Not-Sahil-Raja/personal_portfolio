@@ -24,7 +24,11 @@ const Page = () => {
         "Key challenges addressed include reducing model size, enhancing classification for varied images, and deploying efficiently. This project showcases deep learning transformative potential in advancing healthcare diagnostics.",
         "Leveraging TensorFlow's sequential architecture, this model excels in kidney disease classification with 99.5% accuracy. FastAPI integration transforms predictions into swift, actionable insights, empowering healthcare with real-time CT scan analysis and robust identification of kidney anomalies across diverse cases.",
       ],
-      images: ["/test.jpg", "/test.jpg", "/test.jpg"],
+      images: [
+        "/KidneyDiseaseAI/KidneyDiseaseAI_1.jpg",
+        "/KidneyDiseaseAI/KidneyDiseaseAI_2.jpg",
+        "/KidneyDiseaseAI/KidneyDiseaseAI_3.jpg",
+      ],
       link: [
         "https://github.com/Not-Sahil-Raja/KindneyDiseaseClassification",
         "https://kidneyhealthai.vercel.app/",
@@ -39,7 +43,11 @@ const Page = () => {
         "Behavioral Analysis: TransactionGuard looks at user behavior and transaction patterns to catch anything that seems off. By understanding what typical actions look like, our system can quickly spot any unusual activity that might indicate fraud.",
         "Our fraud detection model uses supervised learning on historical transaction data, employing features like transaction amount, type, and user behavior. Algorithms such as Random Forest and Gradient Boosted Trees classify transactions, continuously improving accuracy for real-time fraud prevention.",
       ],
-      images: ["/test.jpg", "/test.jpg", "/test.jpg"],
+      images: [
+        "/Cypher/cypher_1.jpg",
+        "/Cypher/cypher_2.jpg",
+        "/Cypher/cypher_3.jpg",
+      ],
 
       link: [
         "https://github.com/Roushan1512/Payments-Fraud-Detection",
@@ -55,7 +63,11 @@ const Page = () => {
         "Connect with fellow learners, share experiences, and ask questions in our vibrant online forums and discussion groups.",
         "Agrico is an innovative EdTech platform empowering individuals and communities to learn modern farming practices and cultivate sustainable agricultural success. ",
       ],
-      images: ["/test.jpg", "/test.jpg", "/test.jpg"],
+      images: [
+        "/Agrico/agrico_1.jpg",
+        "/Agrico/agrico_2.jpg",
+        "/Agrico/agrico_3.jpg",
+      ],
       link: [
         "https://github.com/Not-Sahil-Raja/Agrico_",
         "https://agrico.vercel.app/",
@@ -70,7 +82,11 @@ const Page = () => {
         "Connect with fellow learners, share experiences, and ask questions in our vibrant online forums and discussion groups.",
         "It all began with a burnt pan and a fridge overflowing with forgotten leftovers. A hungry college student facing a culinary wasteland, I stared at a lone chicken breast and withering vegetables, yearning for a recipe that used what I actually had. Frustrated by existing recipe databases that demanded specific ingredients, a spark ignited! Why not create a recipe generator that empowers, not restricts? Imagine a tool that transforms your random fridge finds into delicious dishes!",
       ],
-      images: ["/test.jpg", "/test.jpg", "/test.jpg"],
+      images: [
+        "/CooksBook/cooksbook_1.jpg",
+        "/CooksBook/cooksbook_2.jpg",
+        "/CooksBook/cooksbook_3.jpg",
+      ],
       link: [
         "https://github.com/Not-Sahil-Raja/Agrico_",
         "https://agrico.vercel.app/",
@@ -163,12 +179,12 @@ const Page = () => {
             </div>
           </motion.div>
           {/* First Image Part */}
-          <motion.div className="h-[80vh] px-5 py-5">
+          <motion.div className="xl:h-[80vh] h-fit px-5 py-5">
             {project.images?.[0] && (
               <motion.img
                 src={project?.images?.[0]}
                 alt=""
-                className="object-cover w-full h-full hover:scale-105 transition-transform duration-500"
+                className="object-contain w-full h-fit hover:scale-105 transition-transform duration-500"
                 variants={imageAnimation}
               />
             )}
@@ -190,11 +206,14 @@ const Page = () => {
           </motion.div>
           {/* Other Images Part */}
           {project?.images?.slice(1).map((image, index) => (
-            <motion.div className="h-[80vh] px-5 py-5" key={`image-${index}`}>
+            <motion.div
+              className="xl:h-[80vh] h-fit px-5 py-5"
+              key={`image-${index}`}
+            >
               <motion.img
                 src={image}
                 alt={`Project image ${index + 2}`}
-                className="object-cover w-full h-full mb-10 hover:scale-105 transition-transform duration-500"
+                className="object-contain w-full h-full mb-10 hover:scale-105 transition-transform duration-500"
                 variants={imageAnimation}
               />
             </motion.div>

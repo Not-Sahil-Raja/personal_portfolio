@@ -131,18 +131,41 @@ const Header: React.FC<HeaderProps> = ({ delayTime }) => {
       </motion.div>
 
       {/* Mobile Menu Toggle */}
-      <div
-        onClick={() => setMobMenu(!mobMenu)}
-        className="lg:scale-0 fixed top-0 right-0 z-[1001] p-4 text-white mix-blend-difference"
-      >
-        {mobMenu ? <X /> : <MenuIcon />}
-      </div>
+
+      <AnimatePresence>
+        <div
+          onClick={() => setMobMenu(!mobMenu)}
+          className="lg:scale-0 fixed top-0 right-0 z-20 p-4 bg-black text-white rounded-full m-3"
+        >
+          {mobMenu ? (
+            <motion.div
+              key="close"
+              initial={{ scale: 0, rotate: 50 }}
+              animate={{ scale: 1, rotate: 0 }}
+              exit={{ scale: 0, rotate: -50 }}
+              transition={{ duration: 0.5, ease: [0.22, 0.7, 0.2, 1] }}
+            >
+              <X />
+            </motion.div>
+          ) : (
+            <motion.div
+              key="open"
+              initial={{ scale: 0, rotate: -50 }}
+              animate={{ scale: 1, rotate: 0 }}
+              exit={{ scale: 0, rotate: 50 }}
+              transition={{ duration: 0.5, ease: [0.22, 0.7, 0.2, 1] }}
+            >
+              <MenuIcon />
+            </motion.div>
+          )}
+        </div>
+      </AnimatePresence>
 
       {/* Mobile Menu */}
       <AnimatePresence>
         {mobMenu && (
           <motion.div
-            className="w-full h-screen bg-black/80 backdrop-blur-md flex flex-col justify-center items-center font-BitxMap fixed top-0 z-[1000] origin-top"
+            className="w-full h-screen bg-white text-black/80 backdrop-blur-md flex flex-col justify-center items-center font-Coolvetica tracking-wide fixed top-0 z-[19] origin-top"
             initial={{
               scaleY: 0,
             }}
