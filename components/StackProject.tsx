@@ -39,10 +39,6 @@ const StackProject: React.FC<StackProjectProps> = ({ index, data }) => {
     },
     visible: {
       y: 0,
-      transition: {
-        duration: 0.5,
-        ease: [0.85, 0, 0.15, 1],
-      },
     },
   };
 
@@ -50,7 +46,7 @@ const StackProject: React.FC<StackProjectProps> = ({ index, data }) => {
     <div
       ref={ref}
       key={index}
-      className={`h-screen w-full pb-5   flex items-center justify-center  overflow-hidden text-white `}
+      className={`h-screen w-full pb-5 flex items-center justify-center overflow-hidden text-white`}
       style={{
         background:
           index === 0
@@ -59,7 +55,7 @@ const StackProject: React.FC<StackProjectProps> = ({ index, data }) => {
       }}
     >
       <motion.div
-        className={`lg:w-full h-[89%] mt-10 lg:mx-4 w-[80%] p-1 lg:p-4 flex flex-col relative rounded-md origin-bottom`}
+        className={`lg:w-full h-[89%] mt-10 lg:mx-4 sm:w-[80%] w-[95%] sm:p-1 p-0 lg:p-4 flex flex-col relative rounded-md origin-bottom`}
         animate={{
           opacity: isInView ? 1 : 0,
           y: isInView ? 0 : 100,
@@ -73,7 +69,7 @@ const StackProject: React.FC<StackProjectProps> = ({ index, data }) => {
       >
         {" "}
         <motion.div
-          className="h-[90%] mb-5 overflow-hidden relative"
+          className="lg:h-[90%] h-[70%]  mb-5 overflow-hidden relative"
           initial="hidden"
           whileHover="visible"
         >
@@ -83,27 +79,35 @@ const StackProject: React.FC<StackProjectProps> = ({ index, data }) => {
               className="rounded aspect-video  object-cover object-center h-full w-full"
               variants={ImageScaleVariants}
               alt={data.projectName}
+              transition={{
+                duration: 0.5,
+                ease: [0.85, 0, 0.15, 1],
+              }}
             />
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 font-Coolvetica text-white overflow-hidden rounded shadow-md tracking-wider ">
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 font-Coolvetica text-white overflow-hidden rounded  tracking-wider ">
               <motion.div
-                className="px-4 py-2 bg-[#303083]"
+                className="px-4 py-2 bg-[#212129]"
                 variants={buttonVariants}
+                transition={{
+                  duration: 0.5,
+                  ease: [0.85, 0, 0.15, 1],
+                }}
               >
                 EXPLORE PROJECT
               </motion.div>
             </div>
           </Link>
         </motion.div>
-        <div className="h-[9%] mt-[.5vh] lg:w-full flex text-center px-[.5vw] py-[2vh] items-center text-[#303083] font-Geist">
-          <div className=" text-[4vh] whitespace-nowrap font-MonumentExtended pb-[1vh] flex-1">
+        <div className="lg:h-[9%] h-[28%] mt-[.5vh] lg:w-full flex lg:flex-row flex-col text-center xl:px-[.5vw] md:px-0 py-[2vh] items-center lg:justify-normal justify-center text-[#303083] font-Geist">
+          <div className="xl:text-[4vh] md:text-2xl whitespace-nowrap font-MonumentExtended pb-[1vh] lg:flex-1">
             {data.projectName}
           </div>
-          <div className=" text-[1.8vh]  opacity-85 overflow-hidden text-ellipsis  flex-[3]">
-            <div className="mx-10 text-lg text-[#323269] font-ppneuemonteral font-medium">
+          <div className=" lg:text-lg lg:leading-tight lg:mb-0 mb-2  leading-none opacity-85 overflow-hidden text-ellipsis  lg:flex-[3]">
+            <div className="sm:mx-10 mx-0 text-justify md:text-center text-[#323269] font-ppneuemonteral font-medium">
               {data.details}
             </div>
           </div>
-          <div className="flex items-start justify-center flex-1">
+          <div className="flex items-start justify-center lg:flex-1">
             <motion.div className="bg-[#213577] px-[1vw] py-[.5vh] rounded-sm ">
               <Link
                 href={data.link}

@@ -142,11 +142,7 @@ const Header: React.FC<HeaderProps> = ({ delayTime }) => {
       <AnimatePresence>
         {mobMenu && (
           <motion.div
-            className="w-full h-screen flex flex-col justify-center items-center font-BitxMap fixed top-0 z-[1000] origin-top"
-            style={{
-              background:
-                "linear-gradient(360deg, #9d9dee -50%, rgba(17,19,19,1) 34%, #4242b4 150%)",
-            }}
+            className="w-full h-screen bg-black/80 backdrop-blur-md flex flex-col justify-center items-center font-BitxMap fixed top-0 z-[1000] origin-top"
             initial={{
               scaleY: 0,
             }}

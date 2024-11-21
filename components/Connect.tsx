@@ -32,7 +32,7 @@ const Connect: React.FC = () => {
       ref={ref}
     >
       <div className="lg:h-[45%] h-[30%] mt-auto pt-[3vh] flex flex-col items-center justify-center">
-        <div className="lg:text-[10vh] text-[3vh] leading-none overflow-hidden font-ppneuemonteral font-medium  opacity-80 relative text-[#171f3b]">
+        <div className="lg:text-[10vh] md:text-5xl text-4xl leading-none overflow-hidden font-ppneuemonteral font-medium  opacity-80 relative text-[#171f3b]">
           <motion.div
             className="sticky"
             animate={{
@@ -48,7 +48,7 @@ const Connect: React.FC = () => {
             Connect With Me
           </motion.div>
         </div>
-        <div className="lg:text-[25vh] text-[6vh] whitespace-nowrap font-medium font-ppneuemonteral overflow-hidden leading-none relative text-[#13182e]">
+        <div className="xl:text-[25vh] text-3xl whitespace-nowrap font-medium font-ppneuemonteral overflow-hidden leading-none relative text-[#13182e]">
           <motion.div
             className="sticky"
             animate={{
@@ -65,7 +65,7 @@ const Connect: React.FC = () => {
           </motion.div>
         </div>
       </div>
-      <div className="h-[45%] pb-[10vh] flex lg:text-[6.5vh] text-[4.5vh] font-MonumentExtended font-thin">
+      <div className="h-[45%] pb-[10vh] flex md:text-[6.5vh] sm:text-2xl text-xl font-MonumentExtended font-thin">
         <div className="w-1/2 flex flex-col px-[2vw]">
           {/* LinkedIn */}
           <motion.div
@@ -130,7 +130,7 @@ const Connect: React.FC = () => {
                 className="flex items-center justify-center pl-[2vw] w-full h-full z-10 mix-blend-difference text-white"
               >
                 GitHub
-                <ArrowUpRight className="text-[20vh]" size={30} />
+                <ArrowUpRight className="" size={30} />
               </Link>
             </motion.div>
           </motion.div>
@@ -165,7 +165,7 @@ const Connect: React.FC = () => {
                 className="flex items-center justify-center pl-[2vw] w-full h-full z-10 mix-blend-difference text-white"
               >
                 Twitter
-                <ArrowUpRight className="text-[50vh]" size={30} />
+                <ArrowUpRight className="" size={30} />
               </Link>
             </motion.div>
           </motion.div>
@@ -199,7 +199,7 @@ const Connect: React.FC = () => {
                 className="flex items-center justify-center pl-[2vw] w-full h-full z-10 mix-blend-difference text-white"
               >
                 Email
-                <ArrowUpRight className="text-[50vh]" size={30} />
+                <ArrowUpRight className="" size={30} />
               </Link>
             </motion.div>
           </motion.div>

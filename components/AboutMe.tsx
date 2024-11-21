@@ -54,7 +54,7 @@ const AboutMe: React.FC = () => {
                   return (
                     <motion.div
                       key={index}
-                      className=" text-[5vh] relative block overflow-hidden whitespace-nowrap leading-none "
+                      className=" xl:text-[5vh] lg:text-2xl text-sm relative block lg:whitespace-nowrap lg:text-start text-center  leading-none "
                       initial="hidden"
                       whileInView="visible"
                     >
@@ -111,7 +111,7 @@ const AboutMe: React.FC = () => {
                       className="z-[1] max-h-16  absolute w-full inset-0 object-cover opacity-40 mix-blend-color-dodge"
                     />
                     <motion.div
-                      className="text-[2.35vh]   px-5 py-2 font-MonumentExtended z-[3] whitespace-nowrap shadow-xl box-content block overflow-hidden relative"
+                      className="lg:text-[2.35vh] text-lg px-5 py-2 font-MonumentExtended z-[3] whitespace-nowrap shadow-xl box-content block overflow-hidden relative"
                       initial="initial"
                       whileHover="hovered"
                     >

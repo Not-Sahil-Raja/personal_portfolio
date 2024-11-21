@@ -49,7 +49,7 @@ const ThankYou: React.FC<ThankYouProps> = ({
     >
       <div className="flex flex-col text-center">
         <motion.span
-          className="lg:text-[6vh] text-[3vh] leading-none whitespace-nowrap font-Coolvetica text-[#FFFFFF]"
+          className="lg:text-[6vh] md:text-[3vh] text-3xl leading-none sm:whitespace-nowrap whitespace-normal font-Coolvetica text-[#FFFFFF]"
           initial={{
             opacity: 0,
             rotateX: "30deg",
@@ -69,7 +69,7 @@ const ThankYou: React.FC<ThankYouProps> = ({
           Thank You For Visiting My Website !
         </motion.span>
         <motion.span
-          className="text-[5vh] font-Coolvetica text-[#e9e9ff]"
+          className="md:text-[5vh] text-2xl font-Coolvetica text-[#e9e9ff]"
           initial={{
             opacity: 0,
             rotateX: "30deg",
@@ -112,7 +112,7 @@ const ThankYou: React.FC<ThankYouProps> = ({
           </Link>
         </motion.div>
         {/* Copyright */}
-        <div className="text-[2vh] mt-[5vh] absolute bottom-[2%] right-[5%]">
+        <div className="text-[2vh] mt-[5vh] absolute bottom-[2%] right-[5%] font-BitxMap">
           <span>© 2024 Sahil Raja</span>
         </div>
         <div className="text-[2vh] mt-[5vh] rounded-full absolute bottom-[10%] left-[8%]">

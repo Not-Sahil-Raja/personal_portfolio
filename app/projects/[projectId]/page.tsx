@@ -118,10 +118,13 @@ const Page = () => {
       {project && (
         <div className="flex flex-col">
           {/* Heading Part */}
-          <motion.div className="h-[70vh] mt-[13vh] p-4" variants={fadeInUp}>
+          <motion.div
+            className="h-[70vh] md:mt-[13vh] mt-5 p-4"
+            variants={fadeInUp}
+          >
             <div className="flex flex-col h-full gap-4 items-center">
               <motion.div
-                className="text-4xl font-MonumentExtended mb-4 px-8 text-center"
+                className="md:text-4xl text-2xl font-MonumentExtended mb-4 md:px-8 px-0 text-center"
                 variants={fadeInUp}
               >
                 {project?.projectTitle}
@@ -144,13 +147,13 @@ const Page = () => {
                 </Link>
               </motion.div>
               <motion.div
-                className="text-lg flex flex-col mt-auto mb-4 px-8"
+                className=" flex flex-col mt-auto mb-4 md:px-8 px-0"
                 variants={staggerContainer}
               >
                 {project.details.slice(0, 3).map((detail, index) => (
                   <motion.div
                     key={index}
-                    className="h-full font-ppneuemonteral font-medium text-[1.35rem] mb-2"
+                    className="h-full font-ppneuemonteral font-medium md:text-[1.35rem] text-sm md:mb-2 sm:text-left text-justify"
                     variants={fadeInUp}
                   >
                     {detail}
@@ -172,13 +175,13 @@ const Page = () => {
           </motion.div>
           {/* Second Text Part */}
           <motion.div
-            className="text-lg flex flex-col pt-16 px-8 pb-24"
+            className="text-lg flex flex-col pt-16 md:px-8 px-5 pb-24"
             variants={fadeInUp}
           >
             {project.details.slice(3, 4).map((detail, index) => (
               <motion.div
                 key={`detail-${index}`}
-                className="h-full text-center font-ppneuemonteral font-medium text-[1.35rem] mb-2"
+                className="h-full font-ppneuemonteral font-medium md:text-[1.35rem] text-sm mb-2 sm:text-left text-justify"
                 variants={fadeInUp}
               >
                 {detail}
@@ -198,7 +201,7 @@ const Page = () => {
           ))}
           {/* Go Back and Contact Buttons */}
           <motion.div
-            className="h-[10vh] px-10 flex items-center justify-between"
+            className="h-[10vh] md:px-10 px-0  flex items-center justify-between"
             variants={fadeInUp}
           >
             <motion.div initial="initial" whileHover="hidden">
