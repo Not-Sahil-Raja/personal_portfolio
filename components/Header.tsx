@@ -135,7 +135,7 @@ const Header: React.FC<HeaderProps> = ({ delayTime }) => {
       <AnimatePresence>
         <div
           onClick={() => setMobMenu(!mobMenu)}
-          className="lg:scale-0 fixed top-0 right-0 z-[41] p-4 bg-black text-white rounded-full m-3"
+          className="lg:scale-0 fixed top-0 right-0 z-[41] p-4 bg-[#ffffff] text-black rounded-full m-3 mix-blend-difference"
         >
           {mobMenu ? (
             <motion.div
@@ -204,7 +204,7 @@ const Header: React.FC<HeaderProps> = ({ delayTime }) => {
                 >
                   <motion.div
                     variants={mobMenuItems}
-                    className=" mix-blend-difference text-white"
+                    className=" mix-blend-difference text-white tracking-wider"
                   >
                     {label}
                   </motion.div>
