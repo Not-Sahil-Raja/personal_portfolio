@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import PortfolioLogo from "./Logo";
 
 const Reveal = () => {
   const [isLoading, setisLoading] = useState(true);
@@ -47,7 +48,7 @@ const Reveal = () => {
               {isLoading && (
                 <>
                   <motion.span
-                    className=" tracking-wider inline-block px-1"
+                    className=" tracking-wider inline-block px-1 h-[4vh] aspect-square"
                     variants={textVariants}
                     transition={{
                       duration: 0.25,
@@ -58,7 +59,7 @@ const Reveal = () => {
                     animate="visible"
                     exit="exit"
                   >
-                    ✦
+                    <PortfolioLogo />
                   </motion.span>
                   <motion.span
                     className=" tracking-wider inline-block"

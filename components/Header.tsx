@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { MenuIcon, X } from "lucide-react";
 import Link from "next/link";
+import PortfolioLogo from "./Logo";
 
 interface HeaderProps {
   delayTime: number;
@@ -75,8 +76,8 @@ const Header: React.FC<HeaderProps> = ({ delayTime }) => {
           <div className="w-full h-full flex items-center justify-center">
             <Link href="/">
               <div className=" text-[2.5vh] h-full px-6 leading-none mix-blend-difference font-MonumentExtended  flex justify-center items-center relative">
-                <motion.span
-                  className=" inline-block"
+                <motion.div
+                  className="flex justify-center items-center gap-1"
                   initial={{ y: 100 }}
                   animate={{ y: 0 }}
                   transition={{
@@ -85,8 +86,12 @@ const Header: React.FC<HeaderProps> = ({ delayTime }) => {
                     ease: [0.22, 0.7, 0, 1],
                   }}
                 >
-                  ✦ SAHIL{" "}
-                </motion.span>
+                  {" "}
+                  <div className=" h-[2.5vh] aspect-square">
+                    <PortfolioLogo />
+                  </div>
+                  SAHIL{" "}
+                </motion.div>
               </div>
             </Link>
             {sections.map(({ label, id, index }) => (
