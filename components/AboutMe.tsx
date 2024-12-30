@@ -90,7 +90,7 @@ const AboutMe: React.FC = () => {
               >
                 <Link
                   className="text-[#e1e8ff] bg-[#1c2330] w-fit flex items-center justify-center mb-[3vh] border border-b-4 max-h-16 overflow-hidden rounded-2xl "
-                  href="https://drive.google.com/file/d/1yB4p8FrN64QSCANTFhlQ_LtSfUxebNMu/view?usp=sharing"
+                  href="https://drive.google.com/file/d/1CFa5Z5OP3-XnRrs0hpuGO5L14BPZ00lW/view?usp=sharing"
                   target="_blank"
                   style={{
                     backgroundImage: "linear-gradient(#0006,#0006)",
